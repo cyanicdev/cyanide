@@ -1,2 +1,2 @@
 # cyanide
-An integrated development environment for competitive programming.
+An integrated development environment for competitive programming, created in C# WPF.
