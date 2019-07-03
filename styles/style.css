@@ -1,0 +1,125 @@
+* {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+.center-screen {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+#title-bar {
+    -webkit-app-region: drag;
+    height: 22px;
+    background-color: #333333;
+}
+
+#title {
+    color: #a6a7a8;
+    font-size: 10pt;
+    position: fixed;
+    top: 0px;
+    left: 6px;
+}
+
+#title-bar-btns {
+    -webkit-app-region: no-drag;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+}
+
+#title-bar-btns div {
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    height: 22px;
+    width: 30px;
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+}
+
+#min-btn:hover {
+    background-color: #3F3F41;
+}
+
+#max-btn:hover {
+    background-color: #3F3F41;
+}
+
+#close-btn:hover {
+    background-color: #f04747;
+}
+
+body {
+    background-color: #1e1e1e;
+}
+
+body h1 {
+    font-size: 25px;
+    margin-left: 8px;
+    margin-top: 8px;
+}
+
+#homeButtonList{
+    list-style-type: none;
+}
+
+.homeButton {
+    cursor: pointer;
+    background-color: #1e1e1e;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    width: 200px;
+    transition: all 0.5s;
+}
+
+.homeButton:hover {
+    background-color: #333333;
+}
+
+.homeButton:active{
+    background-color: #3e9c80;
+}
+
+.homeButton span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.homeButton span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.homeButton:hover span {
+    padding-right: 25px;
+}
+
+.homeButton:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+#textInput{
+    margin-top: 550px;
+    color: black;
+}

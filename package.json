@@ -1,0 +1,23 @@
+{
+  "name": "cyanide-electron",
+  "version": "1.0.0",
+  "description": "Cyanide IDE built with Electron",
+  "main": "scripts/main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cyanicdev/cyanide-electron.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cyanicdev/cyanide-electron/issues"
+  },
+  "homepage": "https://github.com/cyanicdev/cyanide-electron#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "^5.0.6"
+  }
+}
