@@ -1,3 +1,6 @@
+# File write test file
+temp.txt
+
 # Logs
 logs
 *.log
