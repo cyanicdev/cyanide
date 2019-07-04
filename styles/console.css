@@ -1,9 +1,12 @@
 .console-screen {
-  margin: 10px;
+    margin: 10px;
 }
 
-p {
-  font-family: monospace, monospace;
-  font-size: 14px;
-  word-wrap: break-word;
+pre {
+    font-family: monospace, monospace;
+    font-size: 14px;
+
+    white-space: pre-wrap;
+    word-break: break-all;
+    overflow-wrap: break-word;
 }
