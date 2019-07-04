@@ -3,8 +3,8 @@ const app = electron.app
 const BrowserWindow = electron.BrowserWindow
 
 function createWindow () {
-  let win = new BrowserWindow({ width: 1200, height: 800, frame: false, webPreferences: { nodeIntegration: true }, backgroundColor: '#FFF'})
-  win.loadFile('html/index.html')
+  let win = new BrowserWindow({ width: 800, height: 600, frame: false, webPreferences: { nodeIntegration: true }, backgroundColor: '#FFF'})
+  win.loadFile('html/console.html')
   win.on('closed', () => {
     win = null
   })

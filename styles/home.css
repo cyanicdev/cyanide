@@ -1,10 +1,3 @@
-* {
-    color: white;
-    font-family: 'Open Sans', sans-serif;
-    margin: 0;
-    padding: 0;
-    outline: none;
-}
 
 .center-screen {
     text-align: center;
@@ -13,54 +6,6 @@
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
-}
-
-#title-bar {
-    -webkit-app-region: drag;
-    height: 22px;
-    background-color: #333333;
-}
-
-#title {
-    color: #a6a7a8;
-    font-size: 10pt;
-    position: fixed;
-    top: 0px;
-    left: 6px;
-}
-
-#title-bar-btns {
-    -webkit-app-region: no-drag;
-    position: fixed;
-    top: 0px;
-    right: 0px;
-}
-
-#title-bar-btns div {
-    cursor: pointer;
-    display: inline-block;
-    text-align: center;
-    height: 22px;
-    width: 30px;
-    background-color: transparent;
-    border: none;
-    font-size: 16px;
-}
-
-#min-btn:hover {
-    background-color: #3F3F41;
-}
-
-#max-btn:hover {
-    background-color: #3F3F41;
-}
-
-#close-btn:hover {
-    background-color: #f04747;
-}
-
-body {
-    background-color: #1e1e1e;
 }
 
 body h1 {

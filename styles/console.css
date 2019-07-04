@@ -1,0 +1,9 @@
+.console-screen {
+  margin: 10px;
+}
+
+p {
+  font-family: monospace, monospace;
+  font-size: 14px;
+  word-wrap: break-word;
+}

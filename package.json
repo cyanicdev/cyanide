@@ -16,7 +16,9 @@
     "url": "https://github.com/cyanicdev/cyanide-electron/issues"
   },
   "homepage": "https://github.com/cyanicdev/cyanide-electron#readme",
-  "dependencies": {},
+  "dependencies": {
+    "node-cmd": "^3.0.0"
+  },
   "devDependencies": {
     "electron": "^5.0.6"
   }
