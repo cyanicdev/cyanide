@@ -1,4 +1,13 @@
-.console-screen {
+#console-screen {
+    position: absolute;
+    top: 22px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+}
+
+#console-content {
     margin: 10px;
 }
 
