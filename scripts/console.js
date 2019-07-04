@@ -10,20 +10,25 @@
     var myConsole = new nodeConsole.Console(process.stdout, process.stderr);
 
     function init() {
-        /*
-        exec('cat *.js bad_file | wc -l', (err, stdout, stderr) => {
-          if (err) {
-            // node couldn't execute the command
-            document.getElementById('output').innerText += err;
+
+        let output = document.getElementById('output');
+
+        function runCommand(command) {
+          exec(command, (err, stdout, stderr) => {
+            if (err) {
+              // node couldn't execute the command
+              consoleText += '\n' + err;
+          }
+
+            // the *entire* stdout and stderr (buffered)
+            consoleText +=  `\n stdout: ${stdout}`;
+            consoleText +=  `\n stderr: ${stderr}`;
+            consoleText += '\n'
+
+            output.innerText = consoleText;
+          });
         }
 
-          // the *entire* stdout and stderr (buffered)
-          output +=  `stdout: ${stdout}`;
-          output +=  `stderr: ${stderr}`;
-        });
-        */
-
-        //let output = document.getElementById('output').innerText;
         let consoleText = '';
 
         document.addEventListener("keydown", function(e) {
@@ -31,8 +36,9 @@
             // if (window.event) { keynum = e.key; }
             if (e.key.length == 1) { consoleText += e.key; }
             else if (e.key == 'Backspace') { consoleText = consoleText.slice(0, -1); }
+            else if (e.key == 'Enter') { runCommand(consoleText.split("\n")[consoleText.split("\n").length-1]); }
 
-            document.getElementById('output').innerText = consoleText;
+            output.innerText = consoleText;
         }, false);
 
 
