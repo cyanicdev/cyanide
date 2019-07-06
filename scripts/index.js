@@ -1,4 +1,5 @@
 (function () {
+    const electron = require('electron')
     const remote = require('electron').remote
     const shell = require('electron').shell
     const fs = require('fs')
@@ -29,10 +30,36 @@
         })
 
         document.getElementById("openFile").addEventListener("click", function (e){
-            fs.readFile("res/test.txt", 'utf8', function (err, data) {
-                if (err) return myConsole.log(err);
-                myConsole.log(data);
-            })
+            // get current window
+            const window = remote.getCurrentWindow()
+
+            // options dictionary for open dialog
+            let options = {
+                // See place holder 1 in above image
+                title : "Open File(s)", 
+                
+                // See place holder 3 in above image
+                buttonLabel : "Open File(s)",
+                
+                // See place holder 4 in above image
+                filters :[
+                 {name: 'Code', extensions: ['js', 'html', 'css', 'swift', 'm', 'h', 'c', 'cc', 'cpp', 'cp', 'cxx', 'csx', 'cs', 'py', 'txt', 'log', 'rb', 'xml', 'plist', 'pl']},
+                 {name: 'All Files', extensions: ['*']}
+                ],
+                properties: ['openFile','multiSelections']
+            }
+            myConsole.log("yeet")
+            let filePaths = electron.remote.dialog.showOpenDialog(window, options)
+            if (filePaths != undefined){
+                myConsole.log(filePaths)
+
+                filePaths.forEach(file => {
+                    fs.readFile(file, 'utf8', function (err, data) {
+                        if (err) return myConsole.log(err);
+                        myConsole.log(data);
+                    })
+                });
+            }
         })
 
         document.getElementById("newFile").addEventListener("click", function (e){
