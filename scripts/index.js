@@ -29,7 +29,7 @@
             const window = remote.getCurrentWindow()
             window.close()
         })
-        
+
         document.getElementById("openFolder").addEventListener("click", function(e){
             const window = remote.getCurrentWindow()
             myConsole.log("open folder")
@@ -56,7 +56,7 @@
                             win.loadURL(modalPath)
                             win.show()*/
 
-                            BrowserWindow.loadURL('html/editor.html')
+                            window.loadFile('html/editor-monaco.html')
                         })
                     });
 
@@ -97,14 +97,7 @@
                         if (err) return myConsole.log(err);
                         myConsole.log(data);
 
-                        // Open the Editor Window
-                         /*const modalPath = 'html/editor.html'
-                            let win = new BrowserWindow({ width: 1200, height: 800, frame: false, webPreferences: { nodeIntegration: true }, backgroundColor: '#FFF' })
-                            win.on('close', function () { win = null })
-                            win.loadURL(modalPath)
-                            win.show()*/
-
-                        window.loadFile('html/editor.html')
+                        window.loadFile('html/editor-monaco.html')
                     })
                 });
             }
@@ -121,7 +114,7 @@
 
     document.onreadystatechange = function () {
         if (document.readyState == "complete") {
-        init()
+            init()
         }
     }
 })()

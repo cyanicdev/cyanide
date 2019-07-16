@@ -32,8 +32,8 @@
     }
 
     document.onreadystatechange = function () {
-    if (document.readyState == "complete") {
-    init()
+        if (document.readyState == "complete") {
+            init()
         }
     }
 })()
