@@ -4,6 +4,7 @@
     const shell = require('electron').shell
     const fs = require('fs')
     const path = require('electron').path
+    const BrowserWindow = electron.remote.BrowserWindow
 
     // for logging to windows terminal instead of chrome dev console
     var nodeConsole = require('console');
@@ -47,6 +48,15 @@
                         fs.readFile(dirPath[0] + '\\' + file, 'utf8', function (err, data) {
                             if (err) return myConsole.log(err);
                             myConsole.log(data);
+
+                            // Open the Editor Window
+                            /*const modalPath = 'html/editor.html'
+                            let win = new BrowserWindow({ width: 1200, height: 800, frame: false, webPreferences: { nodeIntegration: true }, backgroundColor: '#FFF' })
+                            win.on('close', function () { win = null })
+                            win.loadURL(modalPath)
+                            win.show()*/
+
+                            BrowserWindow.loadURL('html/editor.html')
                         })
                     });
 
@@ -86,6 +96,15 @@
                     fs.readFile(file, 'utf8', function (err, data) {
                         if (err) return myConsole.log(err);
                         myConsole.log(data);
+
+                        // Open the Editor Window
+                         /*const modalPath = 'html/editor.html'
+                            let win = new BrowserWindow({ width: 1200, height: 800, frame: false, webPreferences: { nodeIntegration: true }, backgroundColor: '#FFF' })
+                            win.on('close', function () { win = null })
+                            win.loadURL(modalPath)
+                            win.show()*/
+
+                        window.loadFile('html/editor.html')
                     })
                 });
             }
