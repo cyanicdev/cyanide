@@ -28,6 +28,35 @@
             const window = remote.getCurrentWindow()
             window.close()
         })
+        
+        document.getElementById("openFolder").addEventListener("click", function(e){
+            const window = remote.getCurrentWindow()
+            myConsole.log("open folder")
+            let options = {
+                properties: ['openDirectory']
+            }
+
+            let dirPath = electron.remote.dialog.showOpenDialog(window, options)
+            if(dirPath != undefined){
+                myConsole.log("Path: " + dirPath)
+                try {
+                    var files = fs.readdirSync(dirPath[0])
+                    myConsole.log(files)
+
+                    files.forEach(file => {
+                        fs.readFile(dirPath[0] + '\\' + file, 'utf8', function (err, data) {
+                            if (err) return myConsole.log(err);
+                            myConsole.log(data);
+                        })
+                    });
+
+                } catch (error) {
+                   myConsole.log(error) 
+                }
+            } else {
+                myConsole.log("error")
+            }
+        })
 
         document.getElementById("openFile").addEventListener("click", function (e){
             // get current window
