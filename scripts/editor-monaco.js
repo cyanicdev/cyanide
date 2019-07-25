@@ -30,7 +30,7 @@
     amdRequire(['vs/editor/editor.main'], function() {
         const window = remote.getCurrentWindow()
 
-        fs.readFile("buffer.txt", 'utf8', function (err, data) {
+        fs.readFile("buffer.tmp", 'utf8', function (err, data) {
             if (err) return myConsole.log("Error:"+err);
             textContent = data.split("\n")
             myConsole.log("textcontent: "+textContent)

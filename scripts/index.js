@@ -106,7 +106,7 @@
                         
                         // Write to buffer
                         let input = data
-                        fs.writeFile("buffer.txt", input, (err) => {
+                        fs.writeFile("buffer.tmp", input, (err) => {
                             if (err) myConsole.log(err);
                             myConsole.log("Successfully Written to File.");
                             window.loadFile('html/editor-monaco.html')
