@@ -10,6 +10,8 @@
     var nodeConsole = require('console');
     var myConsole = new nodeConsole.Console(process.stdout, process.stderr);
 
+    var fileContents = []
+
     function init() {
         document.getElementById("min-btn").addEventListener("click", function (e) {
             const window = remote.getCurrentWindow()
@@ -48,6 +50,8 @@
                         fs.readFile(dirPath[0] + '\\' + file, 'utf8', function (err, data) {
                             if (err) return myConsole.log(err);
                             myConsole.log(data);
+
+                            openedFile.body = data
 
                             // Open the Editor Window
                             /*const modalPath = 'html/editor.html'
@@ -91,13 +95,23 @@
             let filePaths = electron.remote.dialog.showOpenDialog(window, options)
             if (filePaths != undefined){
                 myConsole.log(filePaths)
-
+                var count = 0
                 filePaths.forEach(file => {
                     fs.readFile(file, 'utf8', function (err, data) {
                         if (err) return myConsole.log(err);
-                        myConsole.log(data);
-
-                        window.loadFile('html/editor-monaco.html')
+                        let splitData = data.split("\n")
+                        //myConsole.log(splitData)
+                        fileContents.push(splitData)
+                        myConsole.log(fileContents)
+                        
+                        // Write to buffer
+                        let input = data
+                        fs.writeFile("buffer.txt", input, (err) => {
+                            if (err) myConsole.log(err);
+                            myConsole.log("Successfully Written to File.");
+                            window.loadFile('html/editor-monaco.html')
+                        });
+                        count = count + 1
                     })
                 });
             }

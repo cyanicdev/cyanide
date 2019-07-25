@@ -17,10 +17,10 @@
   },
   "homepage": "https://github.com/cyanicdev/cyanide-electron#readme",
   "dependencies": {
-    "monaco-editor": "^0.17.1",
     "node-cmd": "^3.0.0"
   },
   "devDependencies": {
-    "electron": "^5.0.6"
+    "electron": "^5.0.6",
+    "monaco-editor": "^0.17.1"
   }
 }
