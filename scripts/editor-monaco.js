@@ -30,41 +30,16 @@
     amdRequire(['vs/editor/editor.main'], function() {
         const window = remote.getCurrentWindow()
 
+        //TODO: Read directory for all files starting with 'buffer' and then a number
+
         fs.readFile("buffer.tmp", 'utf8', function (err, data) {
             if (err) return myConsole.log("Error:"+err);
             textContent = data.split("\n")
             myConsole.log("textcontent: "+textContent)
 
             var editor = monaco.editor.create(document.getElementById('editor'), {
-                value: [textContent].join('\n'),
-                
-                /*[
-                    '#define _CRT_SECURE_NO_WARNINGS',
-                    '#include <iostream>',
-                    '#include <fstream>',
-                    'using namespace std;',
-                    '',
-                    'void patch(string file, string dif, bool revert)',
-                    '{',
-                    '\tchar line[256];',
-                    '\tFILE* input = fopen(file.c_str(), "rb+");',
-                    '\tFILE* patch = fopen(dif.c_str(), "r");',
-                    '\tunsigned int offset;',
-                    '\tint orig, newval;',
-                    '',
-                    '\tif (!input)',
-                    '\t\tthrow "Failed to open binary file (do you need admin access?)";',
-                    '\tif (!patch)',
-                    '\t\tthrow "Failed to open dif file";',
-                    '',
-                    '\tfgets(line, sizeof(line), patch);',
-                    '\tfgets(line, sizeof(line), patch);',
-                    '\tfgets(line, sizeof(line), patch);',
-                    '\tfclose(input);',
-                    '\tfclose(patch);',
-                    '}'
-                ].join('\n'),*/
-                language: 'js',
+                value: textContent.join('\n'),
+                language: 'javascript',
                 theme: 'vs-dark'
             });
         })
