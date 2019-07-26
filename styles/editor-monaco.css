@@ -1,6 +1,80 @@
+* {
+    color: white;
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
 #editor {
     position: absolute;
     top: 30px;
     bottom: 0;
     width: 100%;
+}
+
+#title-bar {
+    line-height: 30px;
+    -webkit-app-region: drag;
+    height: 30px;
+    background-color: #333333;
+}
+
+#title {
+    color: #a6a7a8;
+    font-size: 10pt;
+    position: fixed;
+    left: 10px;
+}
+
+#title-bar-btns {
+    -webkit-app-region: no-drag;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+}
+
+#title-bar-btns div {
+    display: inline-block;
+    text-align: center;
+    height: 30px;
+    width: 46px;
+    background-color: transparent;
+    border: none;
+}
+
+#title-bar-menu {
+    line-height: 0;
+    -webkit-app-region: no-drag;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+}
+
+#title-bar-menu button {
+    display: inline;
+    height: 30px;
+    padding: 0px 8px 0px 8px;
+    background-color: transparent;
+    border: none;
+    font-size: 12px;
+}
+
+#title-bar-menu button:hover {
+    background-color: #3F3F41;
+}
+
+#min-btn:hover {
+    background-color: #3F3F41;
+}
+
+#max-btn:hover {
+    background-color: #3F3F41;
+}
+
+#close-btn:hover {
+    background-color: #d61425;
+}
+
+body {
+    background-color: #1e1e1e;
 }

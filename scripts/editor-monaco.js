@@ -40,7 +40,8 @@
             var editor = monaco.editor.create(document.getElementById('editor'), {
                 value: textContent.join('\n'),
                 language: 'javascript',
-                theme: 'vs-dark'
+                theme: 'vs-dark',
+                fontFamily:'Consolas'
             });
         })
     });
