@@ -53,14 +53,7 @@
 
                             openedFile.body = data
 
-                            // Open the Editor Window
-                            /*const modalPath = 'html/editor.html'
-                            let win = new BrowserWindow({ width: 1200, height: 800, frame: false, webPreferences: { nodeIntegration: true }, backgroundColor: '#FFF' })
-                            win.on('close', function () { win = null })
-                            win.loadURL(modalPath)
-                            win.show()*/
-
-                            window.loadFile('html/editor-monaco.html')
+                            window.loadFile('html/editor.html')
                         })
                     });
 
@@ -99,17 +92,12 @@
                 filePaths.forEach(file => {
                     fs.readFile(file, 'utf8', function (err, data) {
                         if (err) return myConsole.log(err);
-                        let splitData = data.split("\n")
-                        //myConsole.log(splitData)
-                        fileContents.push(splitData)
-                        myConsole.log(fileContents)
-                        
                         // Write to buffer
-                        let input = data
+                        let input = file + "\n" + data
                         fs.writeFile("buffer.tmp", input, (err) => {
                             if (err) myConsole.log(err);
                             myConsole.log("Successfully Written to File.");
-                            window.loadFile('html/editor-monaco.html')
+                            window.loadFile('html/editor.html')
                         });
                         count = count + 1
                     })
@@ -118,11 +106,11 @@
         })
 
         document.getElementById("newFile").addEventListener("click", function (e){
-            let input = document.getElementById("textInput").value
+            let input = 'this is a test text file'
             fs.writeFile("temp.txt", input, (err) => {
                 if (err) myConsole.log(err);
                 myConsole.log("Successfully Written to File.");
-              });
+            });
         })
     }
 
