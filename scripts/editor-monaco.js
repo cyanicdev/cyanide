@@ -41,7 +41,8 @@
                 value: textContent.join('\n'),
                 language: 'javascript',
                 theme: 'vs-dark',
-                fontFamily:'Consolas'
+                fontFamily:'Consolas',
+                automaticLayout: true
             });
         })
     });
