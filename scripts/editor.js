@@ -32,45 +32,24 @@
 
         //TODO: Read directory for all files starting with 'buffer' and then a number
 
-        fs.readFile("buffer.tmp", 'utf8', function (err, data) {
-            if (err) return myConsole.log("Error:" + err);
-            textContent = data.split("\n")
-            var path = textContent[0]
-            textContent.shift()
-
-            model = monaco.editor.createModel(textContent.join('\n'), undefined, monaco.Uri.file(path))
-
-            var editor = monaco.editor.create(document.getElementById('editor'), {theme: 'vs-dark', automaticLayout: true})
-            editor.setModel(model)
-        })
-        fs.unlink("buffer.tmp", function (err) {if (err) return myConsole.log("Error:" + err);})
-    });
-
-    function init() {
-        document.getElementById("min-btn").addEventListener("click", function (e) {
-            const window = remote.getCurrentWindow()
-
-            window.minimize()
-        })
-
-        document.getElementById("max-btn").addEventListener("click", function (e) {
-            const window = remote.getCurrentWindow()
-            if (!window.isMaximized()) {
-                window.maximize()
-            } else {
-                window.unmaximize()
-            }
-        })
-
-        document.getElementById("close-btn").addEventListener("click", function (e) {
-            const window = remote.getCurrentWindow()
-            window.close()
-        })
-    }
-
-    document.onreadystatechange = function () {
-        if (document.readyState == "complete") {
-            init()
+        if(fs.existsSync('buffer.tmp'))
+        {
+            fs.readFile('buffer.tmp', 'utf8', function (err, data) {
+                if (err) return myConsole.log('Error:' + err);
+                textContent = data.split("\n")
+                var path = textContent[0]
+                textContent.shift()
+    
+                model = monaco.editor.createModel(textContent.join('\n'), undefined, monaco.Uri.file(path))
+    
+                var editor = monaco.editor.create(document.getElementById('editor'), {theme: 'vs-dark', automaticLayout: true})
+                editor.setModel(model)
+            })
+            fs.unlink('buffer.tmp', function (err) {if (err) return myConsole.log('Error:' + err);})
         }
-    }
+        else
+        {
+            var editor = monaco.editor.create(document.getElementById('editor'), {theme: 'vs-dark', automaticLayout: true})
+        }
+    });
 })();
