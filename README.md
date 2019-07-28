@@ -1,6 +1,11 @@
 # cyanide-electron
 Cyanide: Electron Edition
 
+## npm Requirements
+- Electron (electron)
+- Monaco Editor (monaco-editor@0.17.1)
+- Custom Electron Titlebar (custom-electron-titlebar)
+
 ## Setup Instructions
 1. Clone the repo.
 2. Ensure you have Node.js and npm installed. Run: **_npm -v_** to check.
