@@ -10,15 +10,15 @@
     var myConsole = new nodeConsole.Console(process.stdout, process.stderr);
 
     function init() {
-        /*
+        
         let overtype = true;
         function overtypeBlink() {
             if (overtype) { output.innerText = consoleText + '\u2583'; }
-            else { output.innerText = consoleText }
+            else { output.innerText = consoleText + '\n' }
             overtype = !overtype;
         }
         setInterval(overtypeBlink, 500);
-        */
+        
         let output = document.getElementById('output');
 
         function runCommand(command) {
@@ -30,14 +30,13 @@
 
             // the *entire* stdout and stderr (buffered)
             if (stdout) {
-                consoleText +=  `\n ${stdout}`;
+              consoleText +=  `\n ${stdout}`;
             } else {
               consoleText +=  `\n ${stderr}`;
             }
-            consoleText += '\n'
 
             output.innerText = consoleText + '\u2583';
-            document.getElementById('console-screen').scrollTo(0,document.getElementById('console-screen').scrollHeight);
+            document.getElementById('console-screen').scrollTo(0, document.getElementById('console-screen').scrollHeight);
           });
         }
 
