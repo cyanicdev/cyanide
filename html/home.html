@@ -3,18 +3,18 @@
     <head>
         <link href="../styles/common.css" rel="stylesheet" type="text/css">
         <link href="../styles/home.css" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
         <script src="../scripts/home.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     </head>
     <body>
         <div class="center-screen">
             <img src="../res/logo.svg" style="width: 200px; height: 200px;">
             <h1>Welcome to Cyanide</h1>
-            <ul style="list-style-type: none;">
-                <li><button class="home-button" id="new-file"><span>New File</span></button></li>
-                <li><button class="home-button" id="open-file"><span>Open File</span></button></li>
-                <li><button class="home-button" id="open-folder"><span>Open Folder</span></button></li>
-                <li><button class="home-button" id="open-recent"><span>Open Recent</span></button></li>
+            <ul id="home-buttons" style="list-style-type: none;">
+                <li><button onclick="newFile()"><span>New File</span></button></li>
+                <li><button onclick="openFile()"><span>Open File</span></button></li>
+                <li><button onclick="openFolder()"><span>Open Folder</span></button></li>
+                <li><button><span>Open Recent</span></button></li>
             </ul>
         </div>
     </body>
