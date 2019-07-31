@@ -1,7 +1,4 @@
-# Ace source code directory
-ace-builds/
-
-# File write test file
+# Custom rules
 temp.txt
 buffer.tmp
 directories.tmp

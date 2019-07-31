@@ -1,21 +1,11 @@
-
-.center-screen {
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-}
-
 body h1 {
     color: #a6a7a8;
     font-size: 25px;
-    margin-left: 8px;
-    margin-top: 8px;
+    padding: 20px;
 }
 
-.homeButton {
+.home-button {
+    color: white;
     cursor: pointer;
     background-color: #1e1e1e;
     border: none;
@@ -28,22 +18,22 @@ body h1 {
     transition: all 0.5s;
 }
 
-.homeButton:hover {
+.home-button:hover {
     background-color: #333333;
 }
 
-.homeButton:active{
+.home-button:active{
     background-color: #3e9c80;
 }
 
-.homeButton span {
+.home-button span {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
 }
 
-.homeButton span:after {
+.home-button span:after {
     content: '\00bb';
     position: absolute;
     opacity: 0;
@@ -52,16 +42,11 @@ body h1 {
     transition: 0.5s;
 }
 
-.homeButton:hover span {
+.home-button:hover span {
     padding-right: 25px;
 }
 
-.homeButton:hover span:after {
+.home-button:hover span:after {
     opacity: 1;
     right: 0;
-}
-
-#textInput{
-    margin-top: 550px;
-    color: black;
 }
