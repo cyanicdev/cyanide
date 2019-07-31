@@ -1,7 +1,3 @@
-#editor * {
-    font-family: Consolas;
-}
-
 #editor {
     overflow: hidden;
     position: absolute;

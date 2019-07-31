@@ -79,6 +79,38 @@ const template = [
                 click: () => remote.app.quit()
             }
         ]
+    },
+    {
+        label: 'Edit',
+        submenu: [
+            {
+                label: 'Undo'
+            },
+            {
+                label: 'Redo'
+            },
+            {
+                type: 'separator'
+            },
+            {
+                label: 'Cut'
+            },
+            {
+                label: 'Copy'
+            },
+            {
+                label: 'Paste'
+            },
+            {
+                type: 'separator'
+            },
+            {
+                label: 'Find'
+            },
+            {
+                label: 'Replace'
+            }
+        ]
     }
 ]
 

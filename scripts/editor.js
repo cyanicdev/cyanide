@@ -42,7 +42,7 @@
     
                 model = monaco.editor.createModel(textContent.join('\n'), undefined, monaco.Uri.file(path))
     
-                var editor = monaco.editor.create(document.getElementById('editor'), {theme: 'vs-dark', automaticLayout: true})
+                var editor = monaco.editor.create(document.getElementById('editor'), {theme: 'vs-dark', automaticLayout: true, fontFamily: 'Consolas'})
                 editor.setModel(model)
             })
             fs.unlink('buffer.tmp', function (err) {if (err) return myConsole.log('Error:' + err);})

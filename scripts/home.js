@@ -1,9 +1,9 @@
 (function () {
     const electron = require('electron')
-    const remote = require('electron').remote
-    const shell = require('electron').shell
+    const remote = electron.remote
+    const shell = electron.shell
     const fs = require('fs')
-    const path = require('electron').path
+    const path = electron.path
     const BrowserWindow = electron.remote.BrowserWindow
 
     // for logging to windows terminal instead of chrome dev console
@@ -13,7 +13,7 @@
     var fileContents = []
 
     function init() {
-        document.getElementById("openFolder").addEventListener("click", function(e){
+        document.getElementById("open-folder").addEventListener("click", function(e) {
             const window = remote.getCurrentWindow()
             myConsole.log("open folder")
             let options = {
@@ -46,7 +46,7 @@
             }
         })
 
-        document.getElementById("openFile").addEventListener("click", function (e){
+        document.getElementById("open-file").addEventListener("click", function (e) {
             // get current window
             const window = remote.getCurrentWindow()
 
@@ -86,7 +86,7 @@
             }
         })
 
-        document.getElementById("newFile").addEventListener("click", function (e){
+        document.getElementById("new-file").addEventListener("click", function (e){
             let input = 'this is a test text file'
             fs.writeFile("temp.txt", input, (err) => {
                 if (err) myConsole.log(err);
