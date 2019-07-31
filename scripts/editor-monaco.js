@@ -37,7 +37,10 @@
             textContent = data.split("\n")
             myConsole.log("textcontent: "+textContent)
 
-            var editor = monaco.editor.create(document.getElementById('editor'), {
+            // autosave every 30 seconds
+            setInterval(saveData, 30000)
+
+            window.editor = monaco.editor.create(document.getElementById('editor'), {
                 value: textContent.join('\n'),
                 language: 'javascript',
                 theme: 'vs-dark',
@@ -66,6 +69,33 @@
         document.getElementById("close-btn").addEventListener("click", function (e) {
             const window = remote.getCurrentWindow()
             window.close()
+        })
+    }
+
+    document.addEventListener("keydown", function(e) {
+        myConsole.log("keydown")
+        if ((window.navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)  && e.keyCode == 83) {
+            myConsole.log("ctrl+s")
+            e.preventDefault();
+            // Save the current working file
+            saveData()
+        }
+      }, false);
+
+    // Function that saves to buffer and to real file
+    function saveData(){
+        const window = remote.getCurrentWindow()
+
+        myConsole.log("saving file(s)")
+        fs.readFile('directories.tmp', 'utf8', function(err, data) {
+            if (err) return myConsole.log(err);
+            let dirs = data.split('\n')
+            myConsole.log(dirs)
+            dirs.forEach(dir => {
+                myConsole.log(dir)
+                var content = window.editor.getValue()
+                myConsole.log(content)
+            })
         })
     }
 

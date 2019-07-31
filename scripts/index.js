@@ -108,6 +108,10 @@
                         let input = data
                         fs.writeFile("buffer.tmp", input, (err) => {
                             if (err) myConsole.log(err);
+
+                            // Save file directories for later access
+                            fs.appendFileSync('directories.tmp', file + '\n');
+
                             myConsole.log("Successfully Written to File.");
                             window.loadFile('html/editor-monaco.html')
                         });

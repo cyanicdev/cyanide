@@ -4,6 +4,7 @@ ace-builds/
 # File write test file
 temp.txt
 buffer.tmp
+directories.tmp
 
 # Logs
 logs
