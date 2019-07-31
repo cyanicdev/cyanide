@@ -1,5 +1,5 @@
 {
-  "name": "cyanide-electron",
+  "name": "cyanide",
   "version": "1.0.0",
   "description": "Cyanide IDE built with Electron",
   "main": "scripts/main.js",
@@ -16,9 +16,7 @@
     "url": "https://github.com/cyanicdev/cyanide-electron/issues"
   },
   "homepage": "https://github.com/cyanicdev/cyanide-electron#readme",
-  "dependencies": {
-    "node-cmd": "^3.0.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "electron": "^5.0.8",
     "monaco-editor": "^0.17.1"
