@@ -5,7 +5,6 @@ body h1 {
 }
 
 .home-button {
-    color: white;
     cursor: pointer;
     background-color: #1e1e1e;
     border: none;
@@ -15,11 +14,11 @@ body h1 {
     display: inline-block;
     font-size: 14px;
     width: 200px;
-    transition: all 0.5s;
+    transition: 0.2s;
 }
 
 .home-button:hover {
-    background-color: #333333;
+    background-color: #252525;
 }
 
 .home-button:active{
@@ -27,10 +26,11 @@ body h1 {
 }
 
 .home-button span {
+    color: #a6a7a8;
     cursor: pointer;
     display: inline-block;
     position: relative;
-    transition: 0.5s;
+    transition: 0.2s;
 }
 
 .home-button span:after {
@@ -39,7 +39,7 @@ body h1 {
     opacity: 0;
     top: 0;
     right: -20px;
-    transition: 0.5s;
+    transition: 0.2s;
 }
 
 .home-button:hover span {

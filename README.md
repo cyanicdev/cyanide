@@ -4,8 +4,6 @@ Cyanide: Integrated Development Environment built on Electron
 ## npm Requirements
 - Electron (electron)
 - Monaco Editor (monaco-editor)
-- Custom Electron Titlebar (custom-electron-titlebar)
-- node-cmd (node-cmd)
 
 ## Setup Instructions
 1. Clone the repo.
