@@ -22,11 +22,7 @@ body h1 {
 }
 
 .home-button:active{
-    background-color: #4adee9;
-}
-
-.home-button:active span{
-    color: white;
+    background-color: #3e9c80;
 }
 
 .home-button span {

@@ -145,12 +145,22 @@ function openFile() {
         properties: ['openFile','multiSelections']
     }
     let filePaths = dialog.showOpenDialog(win, options)
-    if (filePaths != undefined) {
-        fs.writeFileSync("buffer.tmp", filePaths, (err) => {
-            if (err) console.log(err)
-            console.log("Successfully Written to File.")
+    if (filePaths != undefined){
+        console.log(filePaths)
+        var count = 0
+        filePaths.forEach(file => {
+            fs.readFile(file, 'utf8', function (err, data) {
+                if (err) return console.log(err)
+                // Write to buffer
+                let input = file + "\n" + data
+                fs.writeFile("buffer.tmp", input, (err) => {
+                    if (err) console.log(err)
+                    console.log("Successfully Written to File.")
+                    win.loadFile('html/editor.html')
+                })
+                count = count + 1
+            })
         })
-        win.loadFile('html/editor.html')
     }
 }
 
