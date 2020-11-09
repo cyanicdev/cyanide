@@ -1,1 +1,0 @@
-const { openFile, openFolder, newFile } = require('electron').remote.require('./common')
