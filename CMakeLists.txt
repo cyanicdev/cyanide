@@ -27,15 +27,21 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(QT NAMES Qt6 Qt5 COMPONENTS Core Quick REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core Quick REQUIRED)
 
+set(FILES
+    main.cpp
+    linenumbers.cpp
+    linenumbers.h
+    codeeditorbackend.cpp
+    codeeditorbackend.h
+    qml.qrc)
+
 if(ANDROID)
     add_library(cyanide SHARED
-      main.cpp
-      qml.qrc
+      ${FILES}
     )
 else()
     add_executable(cyanide
-      main.cpp
-      qml.qrc
+      ${FILES}
     )
 endif()
 
